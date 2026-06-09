@@ -10,7 +10,7 @@ load_dotenv()
 TESTING_AT_HOME = True 
 
 BROKER = 'broker.emqx.io' if TESTING_AT_HOME else os.getenv("PRIVATE_MQTT_BROKER")
-PORT = int(os.getenv("MQTT_PORT"))
+PORT = int(os.getenv("MQTT_PORT", "1883"))
 ID = os.getenv("MQTT_USERNAME")
 CLIENT_ID = f'pcb-finance-{ID}'
 
